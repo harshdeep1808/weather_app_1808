@@ -19,9 +19,8 @@ app.get('/weather',(req,res)=>{
 
     geoLocation(req.query.address,(center)=>{
         if(center){
-        forecast(center,(data)=>{
-                    result=data; 
-                    res.send(result);            
+        forecast(center,(data)=>{ 
+                    res.send(data);            
         }) }
         else
         res.send({error:"error"});              
